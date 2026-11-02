@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>2925 - Modificación Meta Individual</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#eef2f7;
+    padding:15px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:8px;
+}
+
+.section{
+    background:#f5f9ff;
+    padding:12px;
+    margin-top:12px;
+    border-radius:6px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    margin-bottom:10px;
+    box-sizing:border-box;
+}
+
+textarea{
+    min-height:150px;
+}
+
+.calculado{
+    background:#f0f0f0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>
+2925 - Modificación meta individual Art. 6 CREG 101-120
+</h2>
+
+<div class="section">
+
+<label>Decisión</label>
+<input
+id="decision"
+value="ACCEDE"
+readonly
+style="
+background:#d4edda;
+font-weight:bold;
+color:#155724;">
+
+<label>Notificación</label>
+<select id="notificacion">
+    <option>personalmente</option>
+    <option>por correo electrónico</option>
+    <option>a la dirección</option>
+    <option>con rebote de correo electrónico</option>
+</select>
+
+<label>Nombre usuario</label>
+<input id="nombre">
+
+<label>Correo electrónico</label>
+<input id="correo">
+
+<label>Cuenta</label>
+<input id="cuenta">
+
+<label>Dirección de notificación</label>
+<input id="direccion">
+
+<label id="lblMunicipioNotificacion">
+Municipio de notificación
+</label>
+
+<input
+id="municipioNotificacion">
+
+<label>Número proceso</label>
+<input id="proceso">
+
+</div>
+
+
+<div class="section">
+
+<h3>
+Información solicitud
+</h3>
+
+<label>Causal acreditada</label>
+<select id="causal2925">
+
+    <option value="">
+        Seleccione
+    </option>
+
+    <option value="PROPIETARIO">
+        Nuevo propietario
+    </option>
+
+    <option value="INQUILINO">
+        Nuevo inquilino
+    </option>
+
+</select>
+
+<label>Documento(s) aportado(s)</label>
+<input id="documentos2925">
+
+<label>Fecha del documento aportado</label>
+<input id="fechaDocumento2925" type="date">
+
+<details>
+
+<summary>
+<b>Registro SAC</b>
+</summary>
+
+<textarea
+id="registroProceso2925"
+readonly>
+</textarea>
+
+</details>
+
+</div>
+
+
+<div class="section">
+
+<h3>
+Datos del período
+</h3>
+
+<label>Período analizado</label>
+<input id="periodo2925">
+
+<label>Días facturados</label>
+<input id="dias2925" type="number">
+
+<label>Consumo facturado (kWh)</label>
+<input id="consumo2925" type="number">
+
+<label>Consumo diario del período (kWh)</label>
+<input
+id="consumoDiario2925"
+readonly
+class="calculado">
+
+<label>Clase de servicio</label>
+<select id="servicio2925">
+
+    <option value="">
+        Seleccione clase de servicio
+    </option>
+
+    <option value="RESIDENCIAL">
+        Residencial
+    </option>
+
+    <option value="COMERCIAL">
+        Comercial
+    </option>
+
+    <option value="INDUSTRIAL">
+        Industrial
+    </option>
+
+</select>
+
+<label>Estrato</label>
+<select id="estrato2925">
+
+    <option value="">
+        Seleccione estrato
+    </option>
+
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+
+</select>
+
+<label>Municipio</label>
+<select id="municipio2925">
+    <option value="">
+        Seleccione municipio
+    </option>
+</select>
+
+<label>Nivel de subsistencia (kWh)</label>
+<input
+id="subsistencia2925"
+type="number">
+
+<label>Tipo de área</label>
+<select id="area2925">
+
+    <option value="">
+        Seleccione tipo de área
+    </option>
+
+    <option value="URBANA">
+        Urbana
+    </option>
+
+    <option value="RURAL">
+        Rural
+    </option>
+
+</select>
+
+<label>CU ($/kWh)</label>
+<input id="cu2925">
+
+<label>Valor cobrado por incentivo</label>
+<input id="valorCobrado2925">
+
+</div>
+
+
+<div class="section">
+
+<h3>
+Valores calculados
+</h3>
+
+<label>Meta diaria (kWh)</label>
+<input
+id="metaDiaria2925"
+readonly
+class="calculado">
+
+<label>Meta calculada del período (kWh)</label>
+<input
+id="metaCalculada2925"
+readonly
+class="calculado">
+
+<label>Meta del período (kWh)</label>
+<input
+id="metaPeriodo2925"
+readonly
+class="calculado">
+
+<label>Mínimo 90 % (kWh)</label>
+<input
+id="meta902925"
+readonly
+class="calculado">
+
+<label>Máximo 110 % (kWh)</label>
+<input
+id="meta1102925"
+readonly
+class="calculado">
+
+<label>Tope de ahorro 30 % (kWh)</label>
+<input
+id="topeAhorro2925"
+readonly
+class="calculado">
+
+<label>Resultado del período</label>
+<input
+id="resultadoMeta2925"
+readonly
+style="
+font-weight:bold;
+text-align:center;
+font-size:14px;">
+<hr>
+
+<h4>
+Cálculo del cobro adicional
+</h4>
+
+<label>Base de cobro</label>
+<input
+id="baseCobro2925"
+readonly
+style="
+background:#e2e3e5;
+font-weight:bold;
+color:#495057;">
+
+<label>Porcentaje de cobro</label>
+<input
+id="factorCobro2925"
+readonly
+class="calculado">
+
+<label>Factor de cobro</label>
+<input
+id="cuFactor2925"
+readonly
+style="
+background:#e2e3e5;
+font-weight:bold;
+color:#495057;">
+
+<label>Total cobro adicional</label>
+<input
+id="cobroAdicional2925"
+readonly
+style="
+background:#f8d7da;
+font-weight:bold;
+color:#721c24;">
+
+<label>Valor del ajuste</label>
+<input
+id="valorAjuste2925"
+readonly
+style="
+background:#fff3cd;
+font-weight:bold;
+color:#856404;">
+
+<label>Ajuste que procede</label>
+<input
+id="ajusteProcede2925"
+readonly
+style="
+font-weight:bold;
+text-align:center;
+font-size:14px;">
+
+<label>Valor factura modificada</label>
+<input id="saldoFactura2925">
+
+</div>
+
+<button
+onclick="procesar()"
+style="
+background:#0078d4;
+color:white;
+font-weight:bold;">
+Generar respuesta
+</button>
+
+<button onclick="limpiarFormulario()">
+Limpiar formulario
+</button>
+
+<div class="section">
+
+<textarea
+id="respuesta">
+</textarea>
+
+</div>
+
+<button onclick="copiarRespuesta()">
+Copiar texto
+</button>
+
+</div>
+
+<script>
+
+// AQUÍ iremos pegando:
+
+// formatoCOP()
+
+function formatoCOP(num){
+    return "$" + Number(num || 0)
+    .toLocaleString("es-CO");
+}
+
+// formatearFecha()
+
+function formatearFecha(fecha){
+
+    if(!fecha) return "__________";
+
+    const partes = fecha.split("-");
+
+    const fechaLocal = new Date(
+        partes[0],
+        partes[1] - 1,
+        partes[2]
+    );
+
+    return fechaLocal.toLocaleDateString(
+        "es-CO",
+        {
+            day:"numeric",
+            month:"long",
+            year:"numeric"
+        }
+    );
+
+}
+
+
+
+
+
+// actualizarSubsistencia2925()
+
+let municipios2711 = [
+
+{ municipio:"AGUADA", subsistencia:130 },
+{ municipio:"AGUACHICA", subsistencia:173 },
+{ municipio:"ALBANIA", subsistencia:130 },
+{ municipio:"ARATOCA", subsistencia:130 },
+{ municipio:"BARBOSA", subsistencia:130 },
+{ municipio:"BARICHARA", subsistencia:130 },
+{ municipio:"BARRANCABERMEJA", subsistencia:173 },
+{ municipio:"BETULIA", subsistencia:130 },
+{ municipio:"BOLÍVAR", subsistencia:130 },
+{ municipio:"BUCARAMANGA", subsistencia:173 },
+{ municipio:"CALIFORNIA", subsistencia:130 },
+{ municipio:"CHARALÁ", subsistencia:130 },
+{ municipio:"CHARTA", subsistencia:130 },
+{ municipio:"FLORIDABLANCA", subsistencia:173 },
+{ municipio:"GIRÓN", subsistencia:173 },
+{ municipio:"LEBRIJA", subsistencia:130 },
+{ municipio:"PIEDECUESTA", subsistencia:130 },
+{ municipio:"RIONEGRO", subsistencia:173 },
+{ municipio:"SAN GIL", subsistencia:130 },
+{ municipio:"SURATÁ", subsistencia:130 },
+{ municipio:"TONA", subsistencia:130 }
+
+];
+
+function cargarMunicipios(){
+
+    municipio2925.innerHTML = `
+        <option value="">
+            Seleccione municipio
+        </option>
+    `;
+
+    municipios2711.forEach(m => {
+
+        const opcion =
+            document.createElement("option");
+
+        opcion.value =
+            m.municipio;
+
+        opcion.textContent =
+            m.municipio;
+
+        municipio2925.appendChild(opcion);
+
+    });
+
+}
+
+function actualizarSubsistencia2925(){
+
+    const datoMunicipio =
+        municipios2711.find(
+            m =>
+            m.municipio ===
+            municipio2925.value
+        );
+
+    if(datoMunicipio){
+
+        subsistencia2925.value =
+            datoMunicipio.subsistencia;
+
+    }
+
+}
+
+// actualizarDatos2925()
+
+function actualizarDatos2925(){
+
+    const causal =
+    causal2925.value === "PROPIETARIO"
+    ? "nuevo propietario"
+    : causal2925.value === "INQUILINO"
+    ? "nuevo inquilino"
+    : "__________";
+
+    const documentos =
+    documentos2925.value.trim()
+    || "documentación soporte";
+
+    const fechaDocumento =
+    fechaDocumento2925.value
+    ? formatearFecha(
+        fechaDocumento2925.value
+      )
+    : "__________";
+
+    registroProceso2925.value =
+
+`Cliente y usuario solicita modificación de meta individual en aplicación del artículo 6 de la Resolución CREG 101-120 de 2026 y presenta ${documentos} para acreditar la causal de ${causal}, cuyo soporte registra fecha ${fechaDocumento}.`;
+
+}
+
+// actualizarCampos2925()
+
+function actualizarCampos2925(){
+
+    const servicio =
+        servicio2925.value;
+
+    const estrato =
+        estrato2925.value;
+
+    // COMERCIAL E INDUSTRIAL
+
+    if(
+        servicio === "COMERCIAL" ||
+        servicio === "INDUSTRIAL"
+    ){
+
+        estrato2925.previousElementSibling.style.display =
+            "none";
+
+        estrato2925.style.display =
+            "none";
+
+        municipio2925.previousElementSibling.style.display =
+            "none";
+
+        municipio2925.style.display =
+            "none";
+
+        subsistencia2925.previousElementSibling.style.display =
+            "none";
+
+        subsistencia2925.style.display =
+            "none";
+
+        return;
+
+    }
+
+    // RESIDENCIAL
+
+    estrato2925.previousElementSibling.style.display =
+        "block";
+
+    estrato2925.style.display =
+        "block";
+
+    if(
+        ["4","5","6"].includes(
+            estrato
+        )
+    ){
+
+        municipio2925.previousElementSibling.style.display =
+            "none";
+
+        municipio2925.style.display =
+            "none";
+
+        subsistencia2925.previousElementSibling.style.display =
+            "none";
+
+        subsistencia2925.style.display =
+            "none";
+
+    }else{
+
+        municipio2925.previousElementSibling.style.display =
+            "block";
+
+        municipio2925.style.display =
+            "block";
+
+        subsistencia2925.previousElementSibling.style.display =
+            "block";
+
+        subsistencia2925.style.display =
+            "block";
+
+    }
+
+}
+
+function actualizarNotificacion(){
+
+    const tipo =
+        notificacion.value;
+
+    const correo =
+        document.getElementById("correo");
+
+    const direccion =
+        document.getElementById("direccion");
+
+    const municipio =
+        document.getElementById(
+            "municipioNotificacion"
+        );
+
+    correo.previousElementSibling.style.display =
+        "none";
+    correo.style.display =
+        "none";
+
+    direccion.previousElementSibling.style.display =
+        "none";
+    direccion.style.display =
+        "none";
+
+    municipio.previousElementSibling.style.display =
+        "none";
+    municipio.style.display =
+        "none";
+
+    if(tipo === "por correo electrónico"){
+
+        correo.previousElementSibling.style.display =
+            "block";
+        correo.style.display =
+            "block";
+
+    }
+
+    else if(tipo === "a la dirección"){
+
+        direccion.previousElementSibling.style.display =
+            "block";
+        direccion.style.display =
+            "block";
+
+        municipio.previousElementSibling.style.display =
+            "block";
+        municipio.style.display =
+            "block";
+
+    }
+
+    else if(
+        tipo ===
+        "con rebote de correo electrónico"
+    ){
+
+        correo.previousElementSibling.style.display =
+            "block";
+        correo.style.display =
+            "block";
+
+        direccion.previousElementSibling.style.display =
+            "block";
+        direccion.style.display =
+            "block";
+
+        municipio.previousElementSibling.style.display =
+            "block";
+        municipio.style.display =
+            "block";
+
+    }
+
+}
+
+
+
+function agregarNotificacion(texto){
+
+    if(notificacion.value==="personalmente"){
+
+        texto += `
+Finalmente se notifica personalmente al señor(a) ${nombre.value||"XXXXXX"} de la presente decisión empresarial.`;
+
+    }
+
+    else if(notificacion.value==="por correo electrónico"){
+
+        texto += `
+Finalmente se notifica al correo electrónico ${correo.value||"XXXXXX"} al señor(a) ${nombre.value||"XXXXXX"} de la presente decisión empresarial.`;
+
+    }
+
+    else if(notificacion.value==="a la dirección"){
+
+        texto += `
+Finalmente se remite comunicación a la dirección ${direccion.value||"XXXXXX"} del municipio de ${municipioNotificacion.value||"XXXXXX"} al señor(a) ${nombre.value||"XXXXXX"} de la presente decisión empresarial.`;
+
+    }
+
+    else if(notificacion.value==="con rebote de correo electrónico"){
+
+        texto += `
+Finalmente, en cumplimiento de lo establecido en el artículo 67 de la Ley 1437 de 2011, ESSA envió respuesta al correo electrónico ${correo.value||"XXXXXX"}, informado en su requerimiento; sin embargo, teniendo en cuenta que el certificado de entrega del correo electrónico no fue satisfactorio, se procede a citar al señor(a) ${nombre.value||"XXXXXX"} enviando comunicación a través del correo certificado a la dirección ${direccion.value||"XXXXXX"} del municipio de ${municipioNotificacion.value||"XXXXXX"}, donde se presta el servicio de energía eléctrica, para que comparezca a notificarse de la presente decisión personalmente o a través de autorizado, en la oficina de atención al cliente más cercana dentro de los cinco (5) días hábiles siguientes a la fecha de envío de esta citación.`;
+
+    }
+
+    return texto;
+
+}
+
+causal2925?.addEventListener(
+    "change",
+    actualizarDatos2925
+);
+
+documentos2925?.addEventListener(
+    "input",
+    actualizarDatos2925
+);
+
+fechaDocumento2925?.addEventListener(
+    "change",
+    actualizarDatos2925
+);
+
+servicio2925?.addEventListener(
+    "change",
+    actualizarCampos2925
+);
+
+estrato2925?.addEventListener(
+    "change",
+    actualizarCampos2925
+);
+
+municipio2925?.addEventListener(
+    "change",
+    actualizarSubsistencia2925
+);
+
+servicio2925?.addEventListener(
+    "change",
+    calcularMeta2925
+);
+
+estrato2925?.addEventListener(
+    "change",
+    calcularMeta2925
+);
+
+area2925?.addEventListener(
+    "change",
+    calcularMeta2925
+);
+
+subsistencia2925?.addEventListener(
+    "input",
+    calcularMeta2925
+);
+
+dias2925?.addEventListener(
+    "input",
+    calcularMeta2925
+);
+
+consumo2925?.addEventListener(
+    "input",
+    calcularMeta2925
+);
+
+cu2925?.addEventListener(
+    "input",
+    calcularMeta2925
+);
+
+valorCobrado2925?.addEventListener(
+    "input",
+    calcularMeta2925
+);
+
+notificacion?.addEventListener(
+    "change",
+    actualizarNotificacion
+);
+
+valorCobrado2925?.addEventListener(
+    "blur",
+    () => {
+
+        const valor =
+            Number(
+                String(
+                    valorCobrado2925.value
+                ).replace(/\D/g,"")
+            ) || 0;
+
+        valorCobrado2925.value =
+            formatoCOP(valor);
+
+        calcularMeta2925();
+
+    }
+);
+
+saldoFactura2925?.addEventListener(
+    "blur",
+    () => {
+
+        const valor =
+            Number(
+                String(
+                    saldoFactura2925.value
+                ).replace(/\D/g,"")
+            ) || 0;
+
+        saldoFactura2925.value =
+            formatoCOP(valor);
+
+    }
+);
+
+
+// calcularMeta2925()
+
+function calcularMeta2925(){
+
+    const servicio =
+        servicio2925.value;
+
+    const estrato =
+        estrato2925.value;
+
+    const area =
+        area2925.value;
+
+    let metaDiaria = 0;
+
+    // RESIDENCIAL
+
+    if(servicio === "RESIDENCIAL"){
+
+        if(
+            ["1","2","3"].includes(
+                estrato
+            )
+        ){
+
+            metaDiaria =
+                area === "URBANA"
+                ? 5.766667
+                : 4.333333;
+
+        }
+
+        else if(
+            estrato === "4"
+        ){
+
+            metaDiaria =
+                area === "URBANA"
+                ? 3.864368
+                : 3.188393;
+
+        }
+
+        else if(
+            estrato === "5"
+        ){
+
+            metaDiaria =
+                area === "URBANA"
+                ? 4.535715
+                : 5.588653;
+
+        }
+
+        else if(
+            estrato === "6"
+        ){
+
+            metaDiaria =
+                area === "URBANA"
+                ? 5.097869
+                : 11.480646;
+
+        }
+
+    }
+
+    // COMERCIAL
+
+    if(
+        servicio === "COMERCIAL"
+    ){
+
+        metaDiaria =
+            area === "URBANA"
+            ? 6.186024
+            : 9.483871;
+
+    }
+
+    // INDUSTRIAL
+
+    if(
+        servicio === "INDUSTRIAL"
+    ){
+
+        metaDiaria =
+            area === "URBANA"
+            ? 12.648474
+            : 7.891667;
+
+    }
+
+    const dias =
+        Number(
+            dias2925.value
+        ) || 0;
+
+    const metaCalculada =
+        metaDiaria * dias;
+
+    const subsistencia =
+        Number(
+            subsistencia2925.value
+        ) || 0;
+
+    const mostrarMetaCalculada =
+
+        servicio === "RESIDENCIAL" &&
+
+        ["1","2","3"].includes(
+            estrato
+        ) &&
+
+        metaCalculada <
+        subsistencia;
+
+    metaCalculada2925.previousElementSibling.style.display =
+
+        mostrarMetaCalculada
+        ? "block"
+        : "none";
+
+    metaCalculada2925.style.display =
+
+        mostrarMetaCalculada
+        ? "block"
+        : "none";
+
+    metaCalculada2925.style.backgroundColor =
+
+        mostrarMetaCalculada
+        ? "#fff3cd"
+        : "#f0f0f0";
+
+    let metaPeriodo =
+        metaCalculada;
+
+    if(
+
+        servicio === "RESIDENCIAL" &&
+
+        ["1","2","3"].includes(
+            estrato
+        )
+
+    ){
+
+        metaPeriodo =
+            Math.max(
+                metaCalculada,
+                subsistencia
+            );
+
+    }
+
+    const minimo90 =
+        metaPeriodo * 0.90;
+
+    const maximo110 =
+        metaPeriodo * 1.10;
+
+            metaDiaria2925.value =
+        metaDiaria
+        ? metaDiaria.toFixed(6)
+        : "";
+
+    metaCalculada2925.value =
+        metaCalculada
+        ? metaCalculada.toFixed(3)
+        : "";
+
+    metaPeriodo2925.value =
+        metaPeriodo
+        ? metaPeriodo.toFixed(3)
+        : "";
+
+    meta902925.value =
+        minimo90
+        ? minimo90.toFixed(3)
+        : "";
+
+    meta1102925.value =
+        maximo110
+        ? maximo110.toFixed(3)
+        : "";
+
+    const consumo =
+        Number(
+            consumo2925.value
+        ) || 0;
+
+    const consumoDiario =
+        dias > 0
+        ? (consumo / dias)
+        : 0;
+
+    consumoDiario2925.value =
+        consumoDiario
+        ? consumoDiario.toFixed(3)
+        : "";
+
+    if(consumo > maximo110){
+
+        resultadoMeta2925.value =
+            "EXCEDIÓ " +
+            (consumo - maximo110).toFixed(2) +
+            " kWh";
+
+        resultadoMeta2925.style.backgroundColor =
+            "#f8d7da";
+
+        resultadoMeta2925.style.color =
+            "#721c24";
+
+    }
+    else if(consumo < minimo90){
+
+        resultadoMeta2925.value =
+            "AHORRÓ " +
+            (minimo90 - consumo).toFixed(2) +
+            " kWh";
+
+        resultadoMeta2925.style.backgroundColor =
+            "#d4edda";
+
+        resultadoMeta2925.style.color =
+            "#155724";
+
+    }
+    else{
+
+        resultadoMeta2925.value =
+            "CUMPLIÓ LA META";
+
+        resultadoMeta2925.style.backgroundColor =
+            "#d1ecf1";
+
+        resultadoMeta2925.style.color =
+            "#0c5460";
+
+    }
+
+    resultadoMeta2925.style.fontWeight =
+        "bold";
+
+    resultadoMeta2925.style.textAlign =
+        "center";
+
+    const topeAhorro =
+        metaPeriodo * 0.30;
+
+    topeAhorro2925.value =
+        topeAhorro.toFixed(3);
+
+    const cuValor =
+        parseFloat(
+            cu2925.value
+                .replace(",", ".")
+        ) || 0;
+
+    let tarifaAplicar = cuValor;
+
+    if(
+        servicio !== "RESIDENCIAL" ||
+        ["5","6"].includes(estrato)
+    ){
+
+        tarifaAplicar =
+            cuValor * 1.20;
+
+    }
+
+    let factor = 0;
+    let textoFactor = "";
+
+    if(
+        servicio === "RESIDENCIAL" &&
+        ["1","2","3"].includes(estrato)
+    ){
+
+        factor = 0.30;
+        textoFactor = "30%";
+
+    }
+    else if(
+        servicio === "RESIDENCIAL"
+    ){
+
+        factor = 0.50;
+        textoFactor = "50%";
+
+    }
+    else{
+
+        factor = 0.70;
+        textoFactor = "70%";
+
+    }
+
+    const cuFactor =
+        tarifaAplicar * factor;
+
+    const excedido =
+        consumo > maximo110
+        ? (consumo - maximo110)
+        : 0;
+
+    const cobroAdicional =
+        Math.round(
+            excedido * cuFactor
+        );
+
+    factorCobro2925.value =
+        textoFactor;
+
+    cuFactor2925.value =
+        formatoCOP(
+            cuFactor.toFixed(2)
+        );
+
+    cobroAdicional2925.value =
+        formatoCOP(
+            cobroAdicional
+        );
+
+    baseCobro2925.value =
+        formatoCOP(
+            tarifaAplicar.toFixed(2)
+        );
+
+
+const valorCobrado =
+    Number(
+        String(
+            valorCobrado2925.value
+        ).replace(/\D/g,"")
+    ) || 0;
+
+    const diferencia =
+    cobroAdicional -
+    valorCobrado;
+
+valorAjuste2925.value =
+    formatoCOP(
+        Math.abs(diferencia)
+    );
+
+if(diferencia < 0){
+
+    ajusteProcede2925.value =
+        "RETIRAR";
+
+    ajusteProcede2925.style.backgroundColor =
+        "#d4edda";
+
+    ajusteProcede2925.style.color =
+        "#155724";
+
+}
+else if(diferencia === 0){
+
+    ajusteProcede2925.value =
+        "SIN AJUSTAR";
+
+    ajusteProcede2925.style.backgroundColor =
+        "#d1ecf1";
+
+    ajusteProcede2925.style.color =
+        "#0c5460";
+
+}
+else{
+
+    ajusteProcede2925.value =
+        "COBRAR";
+
+    ajusteProcede2925.style.backgroundColor =
+        "#f8d7da";
+
+    ajusteProcede2925.style.color =
+        "#721c24";
+
+}
+
+ajusteProcede2925.style.fontWeight =
+    "bold";
+
+ajusteProcede2925.style.textAlign =
+    "center";
+
+}
+// procesar2925()
+
+function procesar(){
+
+    procesar2925();
+
+}
+
+function procesar2925(){
+
+// VALIDACIONES OBLIGATORIAS
+
+if(!nombre.value.trim()){
+
+    alert("Debe ingresar el nombre del usuario.");
+    nombre.focus();
+    return;
+
+}
+
+if(!cuenta.value.trim()){
+
+    alert("Debe ingresar la cuenta.");
+    cuenta.focus();
+    return;
+
+}
+
+if(!proceso.value.trim()){
+
+    alert("Debe ingresar el número de proceso.");
+    proceso.focus();
+    return;
+
+}
+
+if(!causal2925.value){
+
+    alert(
+        "Debe seleccionar la causal acreditada."
+    );
+
+    causal2925.focus();
+
+    return;
+
+}
+
+if(!periodo2925.value.trim()){
+
+    alert("Debe ingresar el período analizado.");
+    periodo2925.focus();
+    return;
+
+}
+
+if(!documentos2925.value.trim()){
+
+    alert(
+        "Debe ingresar los documentos aportados."
+    );
+
+    documentos2925.focus();
+
+    return;
+
+}
+
+if(!fechaDocumento2925.value){
+
+    alert(
+        "Debe ingresar la fecha del documento aportado."
+    );
+
+    fechaDocumento2925.focus();
+
+    return;
+
+}
+
+if(!dias2925.value){
+
+    alert("Debe ingresar los días facturados.");
+    dias2925.focus();
+    return;
+
+}
+
+if(!consumo2925.value){
+
+    alert("Debe ingresar el consumo facturado.");
+    consumo2925.focus();
+    return;
+
+}
+
+if(!servicio2925.value){
+
+    alert("Debe seleccionar la clase de servicio.");
+    servicio2925.focus();
+    return;
+
+}
+
+if(
+    servicio2925.value === "RESIDENCIAL" &&
+    !estrato2925.value
+){
+
+    alert("Debe seleccionar el estrato.");
+    estrato2925.focus();
+    return;
+
+}
+
+if(
+    servicio2925.value === "RESIDENCIAL" &&
+    ["1","2","3"].includes(
+        estrato2925.value
+    ) &&
+    !municipio2925.value
+){
+
+    alert("Debe seleccionar el municipio.");
+    municipio2925.focus();
+    return;
+
+}
+
+if(!area2925.value){
+
+    alert("Debe seleccionar el tipo de área.");
+    area2925.focus();
+    return;
+
+}
+
+if(!cu2925.value){
+
+    alert("Debe ingresar el CU.");
+    cu2925.focus();
+    return;
+
+}
+
+if(!valorCobrado2925.value){
+
+    alert("Debe ingresar el valor cobrado por incentivo.");
+    valorCobrado2925.focus();
+    return;
+
+}
+
+if(!saldoFactura2925.value){
+
+    alert("Debe ingresar el valor factura modificada.");
+    saldoFactura2925.focus();
+    return;
+
+}
+
+if(
+    notificacion.value ===
+    "por correo electrónico"
+){
+
+    if(!correo.value.trim()){
+
+        alert(
+            "Debe ingresar el correo electrónico."
+        );
+
+        correo.focus();
+        return;
+
+    }
+
+}
+
+if(
+    notificacion.value ===
+    "a la dirección"
+){
+
+    if(!direccion.value.trim()){
+
+        alert(
+            "Debe ingresar la dirección."
+        );
+
+        direccion.focus();
+        return;
+
+    }
+
+    if(!municipioNotificacion.value){
+
+        alert(
+            "Debe seleccionar el municipio de notificación."
+        );
+
+        municipioNotificacion.focus();
+        return;
+
+    }
+
+}
+
+if(
+    notificacion.value ===
+    "con rebote de correo electrónico"
+){
+
+    if(!correo.value.trim()){
+
+        alert(
+            "Debe ingresar el correo electrónico."
+        );
+
+        correo.focus();
+        return;
+
+    }
+
+    if(!direccion.value.trim()){
+
+        alert(
+            "Debe ingresar la dirección."
+        );
+
+        direccion.focus();
+        return;
+
+    }
+
+    if(!municipioNotificacion.value){
+
+        alert(
+            "Debe seleccionar el municipio de notificación."
+        );
+
+        municipioNotificacion.focus();
+        return;
+
+    }
+
+}
+
+    const usuario =
+        document.getElementById("nombre").value || "XXXXXX";
+
+    const nroCuenta =
+        document.getElementById("cuenta").value || "XXXXXX";
+
+    const nroProceso =
+        document.getElementById("proceso").value || "XXXXXX";
+
+    const periodo =
+        periodo2925.value || "XXXXXX";
+
+    const consumoFacturado =
+        consumo2925.value || "XXXX";
+
+    const diasFacturados =
+        dias2925.value || "XX";
+
+    const consumoDiario =
+        consumoDiario2925.value || "XXXX";
+
+    const metaDiaria =
+        metaDiaria2925.value || "XXXX";
+
+    const metaPeriodo =
+        metaPeriodo2925.value || "XXXX";
+
+    const limite110 =
+        meta1102925.value || "XXXX";
+
+    const excedido =
+        Math.max(
+            0,
+            Number(consumo2925.value || 0) -
+            Number(meta1102925.value || 0)
+        ).toFixed(3);
+
+    const valorAjusteTexto =
+        valorAjuste2925.value || "$XXXX";
+
+    const facturaModificada =
+        saldoFactura2925.value || "$XXXX";
+
+    let texto = `Para Electrificadora de Santander S.A E.S.P. en adelante ESSA es muy importante conocer, entender y brindar una solución a las inquietudes de sus clientes y usuarios; por ello analizamos su solicitud registrada mediante proceso número ${nroProceso}; y con el fin de brindarle la atención correspondiente, le comunicamos:
+
+En atención a su reclamación relacionada con el valor facturado por concepto del programa de incentivos al uso eficiente de energía en la factura correspondiente al periodo de ${periodo}, registrado en la cuenta ${nroCuenta}, ESSA le informa que dicho cobro se realizó dando aplicación a la Resolución CREG 101 120 de 2026, en la cual se establece un programa transitorio para promover el ahorro y uso eficiente de la energía eléctrica, como respuesta a las condiciones de estrechez energética del país, asociadas principalmente a los efectos del fenómeno del niño, la reducción de los aportes hídricos a los embalses y el aumento de la demanda de energía eléctrica.
+
+El programa busca incentivar a los usuarios a reducir su consumo de energía mediante el establecimiento de una meta individual. Quienes logren ahorros frente a su meta podrán acceder a un incentivo, que será reconocido al finalizar el programa. Cuando el consumo supere el 110% de la meta individual, se generará un cobro adicional sobre el consumo que exceda dicho límite. La medida tiene una duración inicial de seis (6) meses y no modifica las tarifas del servicio de energía; corresponde a un mecanismo temporal orientado a fomentar el ahorro y contribuir a la confiabilidad del sistema eléctrico nacional.
+
+Así mismo, en el parágrafo 3 del artículo 6 de la Resolución, se establece que el cambio de titular de la cuenta dará lugar a que el nuevo titular sea tratado como usuario sin histórico suficiente, por ello para estos casos, se debe asignar la meta de referencia; por lo cual, de acuerdo con la documentación aportada en su solicitud, se pudo identificar que dentro de los doce (12) meses considerados para el cálculo de la meta individual se presentó un cambio de propietario o arrendatario del inmueble.
+
+En atención a lo anterior y de conformidad con lo establecido en la Resolución CREG 101 120 de 2026, resulta procedente modificar la meta inicialmente asignada y aplicar la meta individual diaria de referencia correspondiente a la categoría del cliente.
+
+Con base en la nueva meta de referencia, para el periodo objeto de reclamación se obtiene la siguiente información:
+
+Consumo facturado: ${consumoFacturado} kWh en ${diasFacturados} días.
+Consumo diario del periodo: ${consumoDiario} kWh.
+Meta diaria de referencia: ${metaDiaria} kWh.
+Meta de referencia del periodo: ${metaPeriodo} kWh.
+110 % de la meta de referencia del periodo: ${limite110} kWh.
+Consumo excedente objeto de cobro: ${excedido} kWh.
+
+Al realizar la aplicación de la nueva meta de referencia al periodo reclamado, se obtiene un nuevo resultado para la liquidación del consumo excedente que en consecuencia, corresponde modificar el valor adicional inicialmente facturado.
+
+Por lo anterior, ESSA decide acceder a su solicitud, realizando la modificación de la meta asignada y aplicando un descuento en su factura por valor de ${valorAjusteTexto}, sobre el concepto "Cobro adicional CREG 101 120 2026".
+
+Así mismo; es importante mencionar que a partir de la actualización, la facturación asociada al programa de incentivos al uso eficiente de la energía se realizará teniendo en cuenta la nueva meta asignada para los periodos posteriores que correspondan.
+
+Por otra parte, ESSA le invita a conocer más información sobre el programa a través de su portal web, www.essa.com.co, donde podrá consultar el comportamiento de su cuenta frente al Programa de Incentivos al Uso Eficiente de la Energía.
+
+Así las cosas, en cumplimiento del artículo 155 de la ley 142 de 1994, le informamos que no se entrega factura de sumas no objeto de reclamo, ni se constituyen valores en reclamación, teniendo en cuenta el ajuste realizado. Se emite la factura modificada por valor de ${facturaModificada}.
+
+De acuerdo con lo expuesto, ESSA decide acceder a su requerimiento, atenta a escuchar sus necesidades, siempre adelante con el propósito que nos inspira, contribuir en la generación de bienestar y desarrollo con equidad.
+`;
+
+texto = agregarNotificacion(texto);
+
+respuesta.value = texto;
+
+}
+
+// copiarRespuesta()
+
+
+function copiarRespuesta(){
+
+    respuesta.select();
+    document.execCommand("copy");
+
+    alert(
+        "Respuesta copiada correctamente"
+    );
+
+}
+
+
+// limpiarFormulario()
+
+function limpiarFormulario(){
+
+    location.reload();
+
+}
+
+
+window.addEventListener("load", () => {
+
+    cargarMunicipios();
+
+    actualizarDatos2925();
+
+    actualizarCampos2925();
+
+    actualizarNotificacion();
+
+    calcularMeta2925();
+
+});
+
+</script>
+
+</body>
+</html>
